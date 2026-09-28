@@ -1,0 +1,3 @@
+# Streamlit Community Cloud configuration
+[server]
+maxUploadSize = 200
