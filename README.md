@@ -21,21 +21,26 @@ streamlit run app.py
 
 Then open the Streamlit URL shown in the terminal, normally `http://localhost:8501`.
 
-## Deploy as a live website
+## Deploy as a private website
 
-This repository is prepared for Streamlit Community Cloud.
+This repository is prepared for Streamlit Community Cloud. The intended setup is a **private app**, not a public website.
 
 1. Open https://share.streamlit.io/ and sign in with GitHub.
-2. Choose **Create app**.
-3. Select repository **sulaimandarwish/pp**.
-4. Select branch **main**.
-5. Set the main file to **app.py**.
-6. Open **Advanced settings** and select **Python 3.12**.
-7. Click **Deploy**.
+2. Connect your GitHub account with permission to access this repository.
+3. Choose **Create app**.
+4. Select repository `sulaimandarwish/pp`.
+5. Select branch `main`.
+6. Set the main file to `app.py`.
+7. Choose Python `3.12` in Advanced settings if it is shown.
+8. Deploy the app.
+9. In the app's **Settings → Sharing**, set **Who can view this app** to **Only specific people can view this app**.
+10. Add only the email addresses that should be allowed to use the RFQ tool.
 
-The cloud build reads `requirements.txt` for Python packages and `packages.txt` for the Linux dependency required by OpenCascade. The Streamlit configuration is in `.streamlit/config.toml`.
+Streamlit Community Cloud supports private apps and private repositories. A private app is not indexed by search engines and viewers must be explicitly authorized. Each Community Cloud workspace can have one private app. The cloud build reads `requirements.txt` for Python packages and `packages.txt` for the Linux dependency required by OpenCascade.
 
-After deployment, Streamlit gives you a public `*.streamlit.app` URL. Opening that URL shows the actual RFQ interface rather than the GitHub source files.
+**Important:** the current GitHub repository is public, so the source code is visible on GitHub even when the deployed Streamlit app is private. If you want the source code private too, change the GitHub repository visibility to **Private** before connecting it to Streamlit Community Cloud.
+
+After deployment, Streamlit gives you a `*.streamlit.app` URL. Only authorized viewers can open the private app.
 
 ## Using the estimator
 
